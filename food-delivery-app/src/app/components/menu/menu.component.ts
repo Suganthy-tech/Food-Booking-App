@@ -10,6 +10,9 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class MenuComponent implements OnInit, OnDestroy {
   public cardList: cardModal.card[] = [];
+  public searchValue: string = '';
+  public filterVeg: boolean = false;
+  public filterfavorite: boolean = false;
   public cartListSubscription: Subscription;
   constructor(public cartService: CartService) { }
 
@@ -45,6 +48,9 @@ export class MenuComponent implements OnInit, OnDestroy {
       this.cartService.updateItemInCardAndCart(card, quatityUpdated);
 
     }
+  }
+  getVeg() {
+    return this.filterVeg ? ['Vegeterian'] : [];
   }
   ngOnDestroy() {
     this.cartListSubscription.unsubscribe();

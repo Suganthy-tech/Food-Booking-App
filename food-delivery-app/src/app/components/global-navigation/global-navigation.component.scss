@@ -1,6 +1,11 @@
 nav {
-    width: 100vw;
     height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #3a3939;
+    box-shadow: -2px -4px 8px 0px;
+    padding: 1rem;
 }
 ul {
     margin-left: 60%;
@@ -15,5 +20,36 @@ ul > * {
 }
 li {
     & :active {
+    }
+    &:hover {
+        background-color: rgb(70, 14, 116);
+
+        color: white;
+    }
+    &:focus {
+    }
+}
+a {
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    color: rgb(70, 14, 116);
+    &:focus,
+    &:visited {
+        color: rgb(70, 14, 116);
+    }
+    &:link {
+        color: rgb(70, 14, 116);
+    }
+    &:hover {
+        background-color: rgb(70, 14, 116);
+        color: white;
+        & > * {
+            color: white;
+        }
+    }
+
+    &:active {
+        background-color: rgb(70, 14, 116);
+        color: white;
     }
 }

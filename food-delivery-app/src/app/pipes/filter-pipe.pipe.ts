@@ -20,7 +20,9 @@ export class FilterPipePipe implements PipeTransform {
       item = order.items.filter(item => searchValue.includes(item[searchField]));
       if (item.length > 0) {
         result.push({ ...order, items: item });
+
       }
+
 
     });
     return result;

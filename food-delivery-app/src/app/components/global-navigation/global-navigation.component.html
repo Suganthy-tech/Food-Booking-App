@@ -1,7 +1,9 @@
 <nav>
     <ul>
         <li><a routerLink="/menu" routerLinkActive="active">Menu</a></li>
-        <li><a routerLink="/cart" routerLinkActive="active">Cart</a></li>
-        <li><a routerLink="/order" routerLinkActive="active">Order</a></li>
+        <li><a routerLink="/cart"><span class="text-green onHoverCartLink ">{{cartService.getCartList().length}}</span>
+                &nbsp;Cart</a>
+        </li>
+        <li><a routerLink="/order">Order</a></li>
     </ul>
 </nav>

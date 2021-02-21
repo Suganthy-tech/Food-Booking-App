@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-global-navigation',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GlobalNavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
+    this.cartService.getCartList().length
   }
 
 }
