@@ -69,5 +69,14 @@ export class CartService {
     }
 
   }
+  updateOrderList(order: cardModal.order) {
+    this.orderList.push(order);
+  }
+  resetCartAndCard() {
+    this.cardList = cardDetails.cardList.map(data => { data.quantity = 0; return data });
+    this.cartList = [];
+    this.cartListSuject.next(this.cartList.slice());
+    this.cardListSubject.next(this.cardList.slice());
+  }
 
 }

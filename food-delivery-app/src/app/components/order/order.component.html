@@ -74,8 +74,8 @@
                     <td>{{order.customerName}} </td>
                     <td>{{order.custContactNumber}}</td>
                     <td>{{order.Amount|currency:order.currency}}</td>
-                    <td>{{order.orderDate}}</td>
-                    <td>{{order.orderTime}}</td>
+                    <td>{{order.orderDate|date}}</td>
+                    <td>{{order.orderTime|date:'h: mm a'}}</td>
 
                 </tr>
                 <tr [style]="{'display':order.expand?'':'none'}">
@@ -85,6 +85,7 @@
                                 <th>Item Name</th>
                                 <th>Item Type</th>
                                 <th>Cuisine</th>
+                                <th>Quantity</th>
                                 <th>Price</th>
                             </tr>
 
@@ -94,6 +95,7 @@
                     <td>{{item.name}}</td>
                     <td>{{item.type}}</td>
                     <td>{{item.cuisine}}</td>
+                    <th>{{item.quantity}}</th>
                     <td>{{item.price}}</td>
                 </tr>
             </tbody>

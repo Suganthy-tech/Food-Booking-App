@@ -4,7 +4,8 @@
 .btn {
     background-color: white;
     border: 1px solid #00000052;
-
+    padding: 0.5rem 0.75rem;
+    outline: 0;
     &-green {
         color: green;
     }
@@ -12,13 +13,32 @@
         // transform: scale3d(1.2, 1.2, 1);
     }
     &:focus {
-        border: 1px solid #00000052;
+        // border: none;
     }
     & * {
-        padding: 0.3rem 0.55rem;
+        // padding: 0.3rem 0.55rem;
     }
     & > span {
         // transform: scale2d(1.2, 1.2, 1);
+    }
+}
+.btn-reverse {
+    background-color: green;
+    border: 1px solid green;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    color: white;
+
+    &:hover {
+        // transform: scale3d(1.2, 1.2, 1);
+    }
+    &:focus {
+        // border: 1px solid #00000052;
+        // border: none;
+    }
+    &:disabled {
+        background-color: rgba(0, 128, 0, 0.603);
     }
 }
 /* Chrome, Safari, Edge, Opera */
@@ -31,6 +51,12 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+    width: 3rem;
+    outline: 0;
+    padding: 0.25rem;
+    &:focus {
+        // border: none;
+    }
 }
 
 html,
@@ -51,7 +77,10 @@ body {
 .text-green {
     color: green;
 }
-
+.text-bold {
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
 // @media screen and (min-width: 601px) {
 //     * {
 //         font-size: 1rem;

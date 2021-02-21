@@ -50,7 +50,21 @@ export class MenuComponent implements OnInit, OnDestroy {
     }
   }
   getVeg() {
-    return this.filterVeg ? ['Vegeterian'] : [];
+    return this.filterVeg ? 'Vegeterian' : '';
+  }
+  getAvailability(item: cardModal.card): boolean {
+    let currentTime = new Date().getHours();
+    if (currentTime >= 6 && currentTime <= 11) {
+      return item.Availability.includes('BreakFast');
+
+    } else if (currentTime >= 12 && currentTime <= 16) {
+      return item.Availability.includes('Lunch');
+    } else if (currentTime >= 18 && currentTime <= 22) {
+      return item.Availability.includes('Dinner');
+    }
+
+
+    return false;
   }
   ngOnDestroy() {
     this.cartListSubscription.unsubscribe();

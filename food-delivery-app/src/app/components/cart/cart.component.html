@@ -1,13 +1,14 @@
-<h2>Cart</h2>
-<p>{{cartList.length}} &nbsp;items</p>
+<h2>CART</h2>
+<p>{{cartList.length}} &nbsp;Items</p>
 <table>
     <tbody>
 
         <tr *ngFor="let cart of cartList;let i=index">
-            <td><img *ngIf="cart.type==='Veg'" src="../../assets/images/veg.png">
-                <img *ngIf="cart.type!=='Veg'" src="../../assets/images/non-veg.png">
+            <td>
+                <span><img *ngIf="cart.type==='Veg'" src="../../assets/images/veg.png">
+                    <img *ngIf="cart.type!=='Veg'" src="../../assets/images/non-veg.png"></span>
             </td>
-            <td>{{cart.name}}</td>
+            <td><span class="menu-items-fm">{{cart.name}}</span></td>
             <td><button class="btn  btn-green">
                     <!-- <span (click)="onAddCart(cart,1)" *ngIf="cart.quantity===0;else quantity">ADD</span> -->
 
@@ -21,4 +22,5 @@
         </tr>
     </tbody>
 </table>
-<button (click)="addOrder()">Order</button>
+<button class="btn-reverse mt-3 " [hidden]="cartList.length===0" (click)="addOrder()"><span
+        class="text-bold">ORDER</span></button>

@@ -35,7 +35,17 @@ export class CartComponent implements OnInit {
     }
   }
   addOrder() {
+    let amount: number = 0;
+    this.cartList.forEach(cart => {
+      amount += cart.quantity * cart.price;
+    })
+    let order: cardModal.order = { orderTime: new Date().getTime().toString(), orderDate: new Date().getUTCDate().toString(), Amount: amount, items: this.cartList, currency: 'INR', expand: false, custContactNumber: 'Customer', customerName: "9078563412" }
 
+    this.cartService.updateOrderList(order);
+    this.clearCart();
 
+  }
+  clearCart() {
+    this.cartService.resetCartAndCard();
   }
 }
