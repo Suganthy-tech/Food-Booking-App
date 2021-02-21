@@ -1,0 +1,29 @@
+<div *ngFor="let card of cardList ;let i =index">
+    <div class="row">
+        <div class="card">
+            <img *ngIf="card.type==='Vegeterian'" src="../../assets/images/veg.png">
+            <img *ngIf="card.type!=='Vegeterian'" src="../../assets/images/non-veg.png">
+            <h3>{{card.name}}</h3>
+            <h4>{{card.price|currency:card.currency}}</h4>
+
+            <span *ngIf="card.favorite" [ngClass]="{'bg-red':card.favorite}" (click)="card.favorite=!card.favorite"><i
+                    class="fa fa-heart " aria-hidden="true"></i></span>
+            <span *ngIf="!card.favorite" (click)="card.favorite=!card.favorite"><i class="fa fa-heart-o"
+                    aria-hidden="true"></i></span>
+            <!-- <button class="btn btn-green" *ngIf="card.quantity===0" (click)="onAddCart(card,'add')"></button> -->
+            <button class="btn  btn-green">
+                <span (click)="onAddCart(card,1,i)" *ngIf="card.quantity===0;else quantity">ADD</span>
+                <ng-template #quantity>
+                    <i class="fa fa-minus color-ash " (click)="updateCart(card,-1,i)"
+                        aria-hidden="true"></i><span><input type="number" [(ngModel)]="card.quantity"
+                            (blur)="updateCart(card,0,i)" (keypress)="onlyNumberKey($event)"></span><i
+                        class="fa fa-plus" (click)="updateCart(card,1,i)" aria-hidden="true"></i>
+                </ng-template>
+            </button>
+        </div>
+
+
+    </div>
+</div>
+
+<app-cart></app-cart>

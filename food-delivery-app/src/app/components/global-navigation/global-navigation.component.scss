@@ -1,0 +1,19 @@
+nav {
+    width: 100vw;
+    height: 3rem;
+}
+ul {
+    margin-left: 60%;
+}
+ul > * {
+    display: inline;
+    margin-right: 3rem;
+    list-style: none;
+    & > * {
+        text-decoration: none;
+    }
+}
+li {
+    & :active {
+    }
+}

@@ -1,0 +1,24 @@
+<h2>Cart</h2>
+<p>{{cartList.length}} &nbsp;items</p>
+<table>
+    <tbody>
+
+        <tr *ngFor="let cart of cartList;let i=index">
+            <td><img *ngIf="cart.type==='Veg'" src="../../assets/images/veg.png">
+                <img *ngIf="cart.type!=='Veg'" src="../../assets/images/non-veg.png">
+            </td>
+            <td>{{cart.name}}</td>
+            <td><button class="btn  btn-green">
+                    <!-- <span (click)="onAddCart(cart,1)" *ngIf="cart.quantity===0;else quantity">ADD</span> -->
+
+                    <i class="fa fa-minus color-ash " (click)="updateCart(cart,-1,i)"
+                        aria-hidden="true"></i><span><input type="number" [(ngModel)]="cart.quantity"
+                            (blur)="updateCart(cart,0)" (keypress)="onlyNumberKey($event)"></span><i class="fa fa-plus"
+                        (click)="updateCart(cart,1)" aria-hidden="true"></i>
+
+                </button></td>
+            <td>{{cart.price|currency:cart.currency}}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="addOrder()">Order</button>

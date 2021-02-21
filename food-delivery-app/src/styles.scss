@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/scss/main.scss";
+
+.btn {
+    background-color: white;
+    border: 1px solid #00000052;
+
+    &-green {
+        color: green;
+    }
+    &:hover {
+        // transform: scale3d(1.2, 1.2, 1);
+    }
+    &:focus {
+        border: 1px solid #00000052;
+    }
+    & * {
+        padding: 0.3rem 0.55rem;
+    }
+    & > span {
+        // transform: scale2d(1.2, 1.2, 1);
+    }
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+.bg-blue {
+    background-color: aqua;
+}
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
