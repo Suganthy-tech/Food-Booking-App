@@ -15,7 +15,7 @@ interface sortColumn {
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
-  sortField: sortColumn[] = [{ icon: '', action: '', index: 0 }, { icon: 'fa fa-arrow-up', action: 'asc', index: 1 }, { icon: 'fa fa-arrow-down', action: 'desc', index: 2 },]
+  sortField: sortColumn[] = [{ icon: 'fa fa-sort', action: '', index: 0 }, { icon: 'fa fa-arrow-up', action: 'asc', index: 1 }, { icon: 'fa fa-arrow-down', action: 'desc', index: 2 },]
   sortValue: sortColumn = this.sortField[0];
   public orderList: order[] = [];
   public orderListTransformed: order[] = [];
@@ -59,7 +59,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderList = this.cardService.getOrderList();
     this.getFavoriteItemList();
-    this.rowsPerPage = 3;
+    this.rowsPerPage = 500;
     this.getPages(this.orderList.length);
 
   }

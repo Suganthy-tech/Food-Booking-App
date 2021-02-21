@@ -39,7 +39,7 @@
                         </span>&nbsp;
                         <span [ngClass]="{'text-green':getAvailability(card),'text-red':!getAvailability(card)}"
                             class=" text-bold">{{getAvailability(card)?'Available':'Unavailable'}}</span></span>
-                    <span class="space-between"> <span>{{card.price|currency:card.currency}}</span>&nbsp;
+                    <span class="space-between-right"> <span>{{card.price|currency:card.currency}}</span>&nbsp;
                         <span *ngIf="card.favorite" [ngClass]="{'text-red':card.favorite}"
                             (click)="card.favorite=!card.favorite"><i class="fa fa-heart "
                                 aria-hidden="true"></i></span>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="row p-1  parent-item">
                     <span class="menu-items-fl">{{card.name}}</span>
-                    <span class="space-between">
+                    <span class="space-between-right">
 
                         <div>
                             <span class="btn  btn-green" (click)="onAddCart(card,1,i)"
