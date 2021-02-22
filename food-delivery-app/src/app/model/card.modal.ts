@@ -6,7 +6,8 @@ export interface card {
     price: number,
     currency: string,
     favorite: boolean,
-    quantity?: number
+    quantity?: number,
+    quanPrice?: number
 
 }
 export interface order {

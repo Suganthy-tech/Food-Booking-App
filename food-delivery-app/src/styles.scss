@@ -97,6 +97,19 @@ body {
         max-height: 60vh;
     }
 }
+.header-sub {
+    &-primary {
+        color: #404146;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    &-secondary {
+        color: #6f727e;
+        font-size: 1rem;
+        display: block;
+        // font-weight: 600;
+    }
+}
 // @media screen and (min-width: 601px) {
 //     * {
 //         font-size: 1rem;

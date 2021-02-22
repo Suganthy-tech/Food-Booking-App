@@ -22,10 +22,14 @@
 
                     </button></td>
                 <td>{{cart.price|currency:cart.currency}}</td>
+                <td>{{cart.quanPrice|currency:cart.currency}}</td>
             </tr>
         </tbody>
     </table>
 </div>
-
-<button class="btn-reverse mt-3 " [hidden]="cartList.length===0" (click)="addOrder()"><span
-        class="text-bold">ORDER</span></button>
+<div class="mt-3" [hidden]="cartList.length===0">
+    <span class="header-sub-primary">Subtotal</span>
+    <span class="header-sub-secondary">Extra charges may apply</span>
+    <hr>
+    <button class="btn-reverse mt-3 " (click)="addOrder()"><span class="text-bold">ORDER</span></button>
+</div>
