@@ -40,12 +40,15 @@ export class CartService {
   }
   updateItemInCardAndCart(card: cardModal.card, quatityUpdated: number) {
     let quan = card.quantity + quatityUpdated;
+    let priceQuan = card.price * quan;
     let cardindex = this.cardList.findIndex(cart => cart.name === card.name);
     this.cardList[cardindex].quantity = quan;
+    this.cardList[cardindex].quanPrice = priceQuan;
     this.cardListSubject.next(this.cardList);
 
     let cartindex = this.cartList.findIndex(cart => cart.name === card.name);
     this.cartList[cartindex].quantity = quan;
+    this.cartList[cartindex].quanPrice = priceQuan;
     this.cartListSuject.next(this.cartList);
   }
   // deleteItemInCard(index: number) {
@@ -68,7 +71,10 @@ export class CartService {
     });
     for (var x = 0; x < i; x++) {
       this.orderList.push({
-        customerName: 'Suganthy' + Math.random().toString().substr(16), custContactNumber: Math.floor(Math.random() * 16777215).toString(16), orderDate: new Date().toString(), currency: 'INR', expand: false, items: cardList, orderTime: new Date().toString(), Amount: 90
+        customerName: 'Suganthy' + Math.random().toString().substr(16),
+        custContactNumber: Math.floor(Math.random() * 16777215).toString(16),
+        orderDate: new Date().toString(), currency: 'INR', expand: false,
+        items: cardList, orderTime: new Date().toString(), Amount: 90
       })
     }
 

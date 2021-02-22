@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   onAddCart(card: cardModal.card, quatityUpdated: number, index: number) {
 
     this.cartService.updateItemInCard(JSON.parse(JSON.stringify(card)), quatityUpdated);
-    this.cartService.addItemToCart({ ...card, quantity: 1 });
+    this.cartService.addItemToCart({ ...card, quantity: 1, quanPrice: 1 * card.price });
 
   }
   updateCart(card: cardModal.card, quatityUpdated: number, index: number) {
