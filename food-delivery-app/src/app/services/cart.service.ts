@@ -10,7 +10,7 @@ export class CartService {
   public cartList: cardModal.card[] = [];
   public cardListSubject: Subject<cardModal.card[]> = new Subject<cardModal.card[]>();
   public cartListSuject: Subject<cardModal.card[]> = new Subject<cardModal.card[]>();
-  public orderList: cardModal.order[] = cardDetails.orderList;
+  public orderList: cardModal.order[] = [];
   constructor() {
     this.cardList = cardDetails.cardList.map(data => { data.quantity = 0; return data });
     this.generateOrderList(30000);
@@ -65,7 +65,9 @@ export class CartService {
   generateOrderList(i: number) {
 
     for (var x = 0; x < i; x++) {
-      this.orderList.push({ customerName: 'Suganthy' + Math.random().toString().substr(16), custContactNumber: Math.floor(Math.random() * 16777215).toString(16), orderDate: new Date().toString(), currency: 'INR', expand: false, items: [], orderTime: new Date().toString(), Amount: 90 })
+      this.orderList.push({
+        customerName: 'Suganthy' + Math.random().toString().substr(16), custContactNumber: Math.floor(Math.random() * 16777215).toString(16), orderDate: new Date().toString(), currency: 'INR', expand: false, items: cardDetails.cardList.map(data => { data.quantity = 1; return data }), orderTime: new Date().toString(), Amount: 90
+      })
     }
 
   }

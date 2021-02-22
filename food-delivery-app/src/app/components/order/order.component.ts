@@ -18,7 +18,7 @@ export class OrderComponent implements OnInit {
   sortField: sortColumn[] = [{ icon: 'fa fa-sort', action: '', index: 0 }, { icon: 'fa fa-arrow-up', action: 'asc', index: 1 }, { icon: 'fa fa-arrow-down', action: 'desc', index: 2 },]
   sortValue: sortColumn = this.sortField[0];
   public orderList: order[] = [];
-  public orderListTransformed: order[] = [];
+
   public searchValue: string = '';
   public searchField: string = '';
   public cuisineList: string[] = ['South Indian', 'North Indian'];
@@ -28,17 +28,7 @@ export class OrderComponent implements OnInit {
   foodType = new FormControl();
   cuisineType = new FormControl();
   favoriteItem = new FormControl();
-  // columnField:{field:string,title:string} [] = [{
-  //   field: 'customerName', title: 'Customer Name',  
-  // }, {
-  // field: 'custContactNumber', title: 'Customer Number',
-  // }, {
-  // field: 'total', title: 'Amount',
-  // }, {
-  // field: 'orderDate', title: 'Order Date ',
-  // }, {
-  //     field: 'orderTime', title: 'Order Time',
-  // }]
+
 
   page: number = 1;
 
