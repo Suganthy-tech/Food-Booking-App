@@ -17,6 +17,7 @@ export class CartListComponent implements OnInit {
 
     this.cartList = this.cartService.getCartList();
     this.getCartList();
+    this.calculateSubTotal();
   }
   onlyNumberKey(evt) {
     let ASCIICode = (evt.which) ? evt.which : evt.keyCode
@@ -26,11 +27,15 @@ export class CartListComponent implements OnInit {
   }
   getCartList() {
     this.cartService.cartListSuject.subscribe(cartList => {
-      let sub: number = 0;
+
       this.cartList = cartList;
-      this.cartList.forEach(cart => { sub += cart.quanPrice });
-      this.subtotal = sub;
+      this.calculateSubTotal();
     });
+  }
+  calculateSubTotal() {
+    let sub: number = 0;
+    this.cartList.forEach(cart => { sub += cart.quanPrice });
+    this.subtotal = sub;
   }
   updateCart(card: cardModal.card, quatityUpdated: number) {
     if ((card.quantity === 1 && quatityUpdated === -1) || card.quantity === 0) {
