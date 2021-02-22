@@ -18,6 +18,8 @@ import { SortpipePipe } from './pipes/sortpipe.pipe';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { GlobalNavigationComponent } from './components/global-navigation/global-navigation.component';
 import { CardfilterPipe } from './pipes/cardfilter.pipe';
+import { GlobalHeaderComponent } from './components/global-header/global-header.component';
+import { CartListComponent } from './components/cart/cart-list/cart-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { CardfilterPipe } from './pipes/cardfilter.pipe';
     PaginationPipe,
     SortpipePipe,
     GlobalNavigationComponent,
-    CardfilterPipe
+    CardfilterPipe,
+    GlobalHeaderComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,

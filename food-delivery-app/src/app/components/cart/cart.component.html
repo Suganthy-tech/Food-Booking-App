@@ -1,27 +1,4 @@
-<h2>CART</h2>
-<p>{{cartList.length}} &nbsp;Items</p>
-<table>
-    <tbody>
+<app-global-header></app-global-header>
 
-        <tr *ngFor="let cart of cartList;let i=index">
-            <td>
-                <span><img *ngIf="cart.type==='Veg'" src="../../assets/images/veg.png">
-                    <img *ngIf="cart.type!=='Veg'" src="../../assets/images/non-veg.png"></span>
-            </td>
-            <td><span class="menu-items-fm">{{cart.name}}</span></td>
-            <td><button class="btn  btn-green">
-                    <!-- <span (click)="onAddCart(cart,1)" *ngIf="cart.quantity===0;else quantity">ADD</span> -->
 
-                    <i class="fa fa-minus color-ash " (click)="updateCart(cart,-1,i)"
-                        aria-hidden="true"></i><span><input type="number" [(ngModel)]="cart.quantity"
-                            (blur)="updateCart(cart,0)" (input)="updateCart(cart,0)"
-                            (keypress)="onlyNumberKey($event)"></span><i class="fa fa-plus" (click)="updateCart(cart,1)"
-                        aria-hidden="true"></i>
-
-                </button></td>
-            <td>{{cart.price|currency:cart.currency}}</td>
-        </tr>
-    </tbody>
-</table>
-<button class="btn-reverse mt-3 " [hidden]="cartList.length===0" (click)="addOrder()"><span
-        class="text-bold">ORDER</span></button>
+<app-cart-list></app-cart-list>
