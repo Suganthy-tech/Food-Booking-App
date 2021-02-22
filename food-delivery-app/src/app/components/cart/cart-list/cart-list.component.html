@@ -7,8 +7,8 @@
 
             <tr class="animation-bottom" *ngFor="let cart of cartList;let i=index">
                 <td>
-                    <span><img *ngIf="cart.type==='Veg'" src="../../assets/images/veg.png">
-                        <img *ngIf="cart.type!=='Veg'" src="../../assets/images/non-veg.png"></span>
+                    <span><img *ngIf="cart.type==='Vegeterian'" src="../../assets/images/veg.png">
+                        <img *ngIf="cart.type!=='Vegeterian'" src="../../assets/images/non-veg.png"></span>
                 </td>
                 <td><span class="menu-items-fm">{{cart.name}}</span></td>
                 <td><button class="btn  btn-green">
