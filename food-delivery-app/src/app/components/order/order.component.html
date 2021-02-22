@@ -59,32 +59,95 @@
                 <thead>
                     <tr>
                         <th>Action</th>
-                        <th (click)="sortColumn('customerName')">Customer Name
-                            <button type="button" class="btn" (click)="searchField='customerName'"> <span><i
-                                        class="fa fa-search"></i></span></button>
+                        <th>
+                            <div class="d-flex justify-content-between">
+                                <span>Customer Name
+                                </span>
+                                <span>
+                                    <button type="button" class="btn" (click)="searchField='customerName'"> <span><i
+                                                class="fa fa-search"></i></span></button>
+                                    <button [disabled]="!(sortValue.field==='customerName'||sortValue.field==='')"
+                                        type="button" class="btn" (click)="sortColumn('customerName')"><span><i
+                                                [ngClass]="sortValue.icon"></i></span></button>
+                                </span>
+                            </div>
+
+                            <!-- <button type="button" class="btn" (click)="searchField='customerName'"> <span><i
+                                        class="fa fa-search"></i></span></button> -->
 
 
 
-                            <span *ngIf="sortValue.field==='customerName'"><i [ngClass]="sortValue.icon"></i></span>
-                        </th>
-                        <th (click)="sortColumn('custContactNumber')">Customer Number
 
-                            <button type="button" class="btn" (click)="searchField='custContactNumber'">
-                                <span><i class="fa fa-search"></i></span></button>
-                            <span *ngIf="sortValue.field==='custContactNumber'"><i
-                                    [ngClass]="sortValue.icon"></i></span>
                         </th>
-                        <th (click)="sortColumn('Amount')">Amount <span><i class="fa fa-search"
-                                    (click)="searchField='Amount'"></i></span>
-                            <span *ngIf="sortValue.field==='Amount'"><i [ngClass]="sortValue.icon"></i></span>
+                        <th>
+                            <div class="d-flex justify-content-between">
+                                <span>Customer Number</span>
+                                <span>
+                                    <button type="button" class="btn" (click)="searchField='custContactNumber'">
+                                        <span><i class="fa fa-search"></i></span></button>
+                                    <button [disabled]="!(sortValue.field==='custContactNumber' ||sortValue.field==='')"
+                                        class="btn" (click)="sortColumn('custContactNumber')">
+                                        <span><i [ngClass]="sortValue.icon"></i></span>
+                                    </button>
+                                </span>
+                            </div>
                         </th>
-                        <th (click)="sortColumn('orderDate')">Order Date <span><i class="fa fa-search"
-                                    (click)="searchField='orderDate'"></i></span>
-                            <span *ngIf="sortValue.field==='orderDate'"><i [ngClass]="sortValue.icon"></i></span>
+                        <th>
+
+                            <div class="d-flex justify-content-between">
+                                <span>Amount
+                                </span>
+                                <span>
+                                    <button class="btn" (click)="searchField='Amount'" type="button">
+                                        <span><i class="fa fa-search"></i></span>
+                                    </button>
+                                    <button [disabled]="!(sortValue.field==='Amount'||sortValue.field==='')" class="btn"
+                                        (click)="sortColumn('Amount')" type="button">
+                                        <span><i [ngClass]="sortValue.icon"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+
+
+
                         </th>
-                        <th (click)="sortColumn('orderTime')">Order Time <span><i class="fa fa-search"
-                                    (click)="searchField='orderTime'"></i></span>
-                            <span *ngIf="sortValue.field==='orderTime'"><i [ngClass]="sortValue.icon"></i></span>
+                        <th>
+
+                            <div class="d-flex justify-content-between">
+                                <span>Order Date
+                                </span>
+                                <span>
+                                    <button class="btn" (click)="searchField='orderDate'" type="button">
+                                        <span><i class="fa fa-search"></i></span>
+                                    </button>
+                                    <button [disabled]="!(sortValue.field==='orderDate'||sortValue.field==='')"
+                                        class="btn" (click)="sortColumn('orderDate')">
+                                        <span><i [ngClass]="sortValue.icon"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+
+
+
+                        </th>
+                        <th>
+
+                            <div class="d-flex justify-content-between">
+                                <span>
+                                    Order Time
+                                </span>
+                                <span>
+                                    <button class="btn" (click)="searchField='orderTime'" type="button">
+                                        <span><i class="fa fa-search"></i></span>
+
+                                    </button>
+                                    <button [disabled]="!(sortValue.field==='orderTime'||sortValue.field==='')"
+                                        class="btn" type="button" (click)="sortColumn('orderTime')">
+                                        <span><i [ngClass]="sortValue.icon"></i></span>
+                                    </button>
+                                </span>
+                            </div>
+
                         </th>
                     </tr>
                 </thead>

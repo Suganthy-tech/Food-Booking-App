@@ -15,8 +15,8 @@ interface sortColumn {
   styleUrls: ['./order.component.scss']
 })
 export class OrderComponent implements OnInit {
-  sortField: sortColumn[] = [{ icon: 'fa fa-sort', action: '', index: 0 }, { icon: 'fa fa-arrow-up', action: 'asc', index: 1 }, { icon: 'fa fa-arrow-down', action: 'desc', index: 2 },]
-  sortValue: sortColumn = this.sortField[0];
+  sortField: sortColumn[] = [{ icon: 'fa fa-sort', action: '', index: 0, field: '' }, { icon: 'fa fa-caret-up', action: 'asc', index: 1 }, { icon: 'fa fa-caret-down', action: 'desc', index: 2 },]
+  sortValue: sortColumn = { ...this.sortField[0] };
   public orderList: order[] = [];
 
   public searchValue: string = '';
@@ -74,8 +74,9 @@ export class OrderComponent implements OnInit {
     }
     else {
       this.sortValue = this.sortField[this.sortValue.index + 1];
+      this.sortValue.field = field;
 
     }
-    this.sortValue.field = field;
+
   }
 }
