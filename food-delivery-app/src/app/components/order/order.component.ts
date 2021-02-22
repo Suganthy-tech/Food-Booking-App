@@ -49,7 +49,7 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.orderList = this.cardService.getOrderList();
     this.getFavoriteItemList();
-    this.rowsPerPage = 500;
+    this.rowsPerPage = 1000;
     this.getPages(this.orderList.length);
 
   }
