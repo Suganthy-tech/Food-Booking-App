@@ -197,9 +197,8 @@
             </table>
 
         </cdk-virtual-scroll-viewport>
-        <select [(ngModel)]="rowsPerPage" (change)="getPages(transformedData.length)">
-            <option [value]="3">3</option>
-            <option [value]="5">5</option>
+        <select [(ngModel)]="rowsPerPage" (change)="active=1;getPages(transformedData.length)">
+
             <option [value]="500">500</option>
             <option [value]="1000">1000</option>
             <option [value]="2000">2000</option>

@@ -32,7 +32,7 @@ export class OrderComponent implements OnInit {
 
   page: number = 1;
 
-  active = 1;
+  public active = 1;
 
   pages
   public rowsPerPage: number;
@@ -58,11 +58,12 @@ export class OrderComponent implements OnInit {
   }
 
   getPages(items: number) {
-    this.active = 1;
+
     let page = items / this.rowsPerPage < 1 ? 1 : Math.ceil(this.orderList.length / this.rowsPerPage);
     this.pages = Array(page).fill(0).map((x, i) => i + 1);
   }
   trackByFn(index, item, itemLength) {
+
     this.getPages(itemLength);
     return index;
   }
