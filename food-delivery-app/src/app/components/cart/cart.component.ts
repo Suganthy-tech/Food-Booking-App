@@ -27,11 +27,17 @@ export class CartComponent implements OnInit {
     });
   }
   updateCart(card: cardModal.card, quatityUpdated: number) {
-    if ((card.quantity === 1 && quatityUpdated === -1) || card.quantity === 0 || card.quantity === null) {
+    if ((card.quantity === 1 && quatityUpdated === -1) || card.quantity === 0) {
       this.cartService.deleteItemToCart(card);
       this.cartService.updateItemInCard(JSON.parse(JSON.stringify(card)), quatityUpdated);
     } else {
       this.cartService.updateItemInCardAndCart(card, quatityUpdated);
+    }
+  }
+  onBlur(card: cardModal.card, quatityUpdated: number) {
+    if (card.quantity === null) {
+      this.cartService.deleteItemToCart(card);
+      this.cartService.updateItemInCard(JSON.parse(JSON.stringify(card)), quatityUpdated);
     }
   }
   addOrder() {

@@ -21,8 +21,9 @@
     &:focus {
         // border: none;
     }
-    & * {
+    & > * {
         // padding: 0.3rem 0.55rem;
+        margin: 0.75rem;
     }
     & > span {
         // transform: scale2d(1.2, 1.2, 1);

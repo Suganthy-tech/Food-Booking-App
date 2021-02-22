@@ -40,6 +40,10 @@ export class MenuComponent implements OnInit, OnDestroy {
 
   }
   updateCart(card: cardModal.card, quatityUpdated: number, index: number) {
+
+    if (card.quantity < 0) {
+      return false;
+    }
     if ((card.quantity === 1 && quatityUpdated === -1) || card.quantity === 0 || card.quantity === null) {
       this.cartService.deleteItemToCart(JSON.parse(JSON.stringify(card)));
       card.quantity = 0;

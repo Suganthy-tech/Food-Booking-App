@@ -53,11 +53,15 @@
                         <div *ngIf="getAvailability(card)">
                             <span class="btn  btn-green" (click)="onAddCart(card,1,i)"
                                 *ngIf="card.quantity===0;else quantity">ADD</span>
-                            <ng-template #quantity class="btn  btn-green">
-                                <i class="fa fa-minus color-ash " (click)="updateCart(card,-1,i)"
-                                    aria-hidden="true"></i><span><input type="number" [(ngModel)]="card.quantity"
-                                        (blur)="updateCart(card,0,i)" (keypress)="onlyNumberKey($event)"></span><i
-                                    class="fa fa-plus text-green" (click)="updateCart(card,1,i)" aria-hidden="true"></i>
+                            <ng-template #quantity>
+                                <div class="btn btn-green">
+                                    <i class="fa fa-minus color-ash " (click)="updateCart(card,-1,i)"
+                                        aria-hidden="true"></i><span>
+                                        <input type="number" [(ngModel)]="card.quantity" (input)="updateCart(card,0,i)"
+                                            (keypress)="onlyNumberKey($event)">
+                                    </span><i class="fa fa-plus text-green" (click)="updateCart(card,1,i)"
+                                        aria-hidden="true"></i>
+                                </div>
                             </ng-template>
                         </div>
                         <div *ngIf="!getAvailability(card)">
