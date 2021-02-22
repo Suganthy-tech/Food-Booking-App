@@ -88,6 +88,15 @@ body {
     font-weight: bold;
     letter-spacing: 0.1rem;
 }
+.scrollBar {
+    overflow-y: scroll;
+    &-70 {
+        max-height: 70vh;
+    }
+    &-60 {
+        max-height: 60vh;
+    }
+}
 // @media screen and (min-width: 601px) {
 //     * {
 //         font-size: 1rem;
