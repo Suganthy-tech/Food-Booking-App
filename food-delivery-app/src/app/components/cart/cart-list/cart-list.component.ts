@@ -10,6 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartListComponent implements OnInit {
 
   public cartList: cardModal.card[] = [];
+  public subtotal: number = 0;
   constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
@@ -25,7 +26,10 @@ export class CartListComponent implements OnInit {
   }
   getCartList() {
     this.cartService.cartListSuject.subscribe(cartList => {
+      let sub: number = 0;
       this.cartList = cartList;
+      this.cartList.forEach(cart => { sub += cart.quanPrice });
+      this.subtotal = sub;
     });
   }
   updateCart(card: cardModal.card, quatityUpdated: number) {

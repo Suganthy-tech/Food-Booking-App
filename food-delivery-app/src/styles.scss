@@ -103,13 +103,30 @@ body {
         font-size: 1.5rem;
         font-weight: 600;
     }
-    &-secondary {
+    &-terniary {
         color: #6f727e;
         font-size: 1rem;
         display: block;
         // font-weight: 600;
     }
 }
+
+.animation-bottom {
+    animation-name: moveInBottom;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+.animation-right {
+    animation-name: moveInright;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+.animation-left {
+    animation-name: moveInleft;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
 // @media screen and (min-width: 601px) {
 //     * {
 //         font-size: 1rem;
