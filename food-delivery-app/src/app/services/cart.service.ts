@@ -63,10 +63,12 @@ export class CartService {
     return this.orderList.slice();
   }
   generateOrderList(i: number) {
-
+    let cardList = JSON.parse(JSON.stringify(this.cardList)).filter(card => {
+      card.quantity = 1; return card
+    });
     for (var x = 0; x < i; x++) {
       this.orderList.push({
-        customerName: 'Suganthy' + Math.random().toString().substr(16), custContactNumber: Math.floor(Math.random() * 16777215).toString(16), orderDate: new Date().toString(), currency: 'INR', expand: false, items: cardDetails.cardList.map(data => { data.quantity = 1; return data }), orderTime: new Date().toString(), Amount: 90
+        customerName: 'Suganthy' + Math.random().toString().substr(16), custContactNumber: Math.floor(Math.random() * 16777215).toString(16), orderDate: new Date().toString(), currency: 'INR', expand: false, items: cardList, orderTime: new Date().toString(), Amount: 90
       })
     }
 
