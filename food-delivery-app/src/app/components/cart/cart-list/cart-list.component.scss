@@ -1,0 +1,21 @@
+table {
+    max-height: 67vh;
+}
+img {
+    max-width: 2rem;
+    max-height: 2rem;
+}
+.menu-items-fm {
+    font-size: medium;
+    text-transform: uppercase;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    text-align: left;
+    padding: 0.5rem;
+}
