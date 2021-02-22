@@ -3,11 +3,17 @@
 
 .btn {
     background-color: white;
+    cursor: pointer;
     border: 1px solid #00000052;
     padding: 0.5rem 0.75rem;
     outline: 0;
     &-green {
         color: green;
+        cursor: pointer;
+    }
+    &-red {
+        color: red;
+        pointer-events: none;
     }
     &:hover {
         // transform: scale3d(1.2, 1.2, 1);
