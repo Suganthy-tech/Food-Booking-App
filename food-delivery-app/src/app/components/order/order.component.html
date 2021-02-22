@@ -174,7 +174,8 @@
                         <td>{{order.orderTime|date:'h: mm a'}}</td>
 
                     </tr>
-                    <tr [style]="{'display':order.expand?'':'none'}" *ngIf="order.items.length>1">
+                    <tr class="animation-left" [style]="{'display':order.expand?'':'none'}"
+                        *ngIf="order.items.length>1">
                         <td colspan="6">
                             <thead>
                                 <tr>
@@ -209,7 +210,7 @@
         </cdk-virtual-scroll-viewport>
         <select [(ngModel)]="rowsPerPage" (change)="active=1;getPages(transformedData.length)">
 
-            <option [value]="500">500</option>
+
             <option [value]="1000">1000</option>
             <option [value]="2000">2000</option>
         </select>
