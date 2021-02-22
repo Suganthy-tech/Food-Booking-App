@@ -22,9 +22,7 @@ tr:nth-child(even) {
     position: absolute;
     top: 10%;
 }
-h1 {
-    font-family: Lato;
-}
+
 a {
     padding: 0.5rem 0.75rem;
     background: #ccc;
@@ -36,9 +34,12 @@ a.active {
     color: #e2e2e2;
     background: #2e2e2e;
 }
-table {
-    width: 100%;
-}
+
 cdk-virtual-scroll-viewport {
     height: 68vh;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    align-items: center;
 }
