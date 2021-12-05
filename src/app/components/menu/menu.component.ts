@@ -41,7 +41,7 @@ export class MenuComponent implements OnInit, OnDestroy {
   }
   updateCart(card: cardModal.card, quatityUpdated: number, index: number) {
 
-    if (card.quantity < 0) {
+    if (card.quantity < 0 || card.quantity > 9) {
       return false;
     }
     if ((card.quantity === 1 && quatityUpdated === -1) || card.quantity === 0 || card.quantity === null) {

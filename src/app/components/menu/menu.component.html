@@ -56,12 +56,12 @@
                                 *ngIf="card.quantity===0;else quantity">ADD</span>
                             <ng-template #quantity>
                                 <div class="btn btn-green animation-left">
-                                    <i class="fa fa-minus color-ash " (click)="updateCart(card,-1,i)"
-                                        aria-hidden="true"></i><span>
+                                    <i class="fa fa-minus color-ash " [disabled]="card.quantity<0"
+                                        (click)="updateCart(card,-1,i)" aria-hidden="true"></i><span>
                                         <input type="number" [(ngModel)]="card.quantity" (input)="updateCart(card,0,i)"
                                             (keypress)="onlyNumberKey($event)">
-                                    </span><i class="fa fa-plus text-green" (click)="updateCart(card,1,i)"
-                                        aria-hidden="true"></i>
+                                    </span><i class="fa fa-plus text-green" [disabled]="card.quantity>10 "
+                                        (click)="updateCart(card,1,i)" aria-hidden="true"></i>
                                 </div>
                             </ng-template>
                         </div>
@@ -71,8 +71,6 @@
                     </span>
                 </div>
             </div>
-
-
         </div>
     </div>
     <div class="wmin-40 pr-2 pl-2">
